@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from octofit_tracker_app.models import User, Team, Activity, Leaderboard, Workout
 from datetime import timedelta
-from django.conf import settings
+from octofit_tracker_app_backend.settings import DATABASES
 from pymongo import MongoClient
 from django.db import connection
 
@@ -11,9 +11,9 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         try:
             # Get MongoDB connection
-            client = MongoClient(settings.DATABASES['default']['HOST'], 
-                               settings.DATABASES['default']['PORT'])
-            db = client[settings.DATABASES['default']['NAME']]
+            client = MongoClient(DATABASES['default']['HOST'], 
+                               DATABASES['default']['PORT'])
+            db = client[DATABASES['default']['NAME']]
             
             # Drop all collections
             self.stdout.write("Clearing existing data...")

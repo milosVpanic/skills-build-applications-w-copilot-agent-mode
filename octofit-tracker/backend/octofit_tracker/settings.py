@@ -1,15 +1,14 @@
 INSTALLED_APPS = [
     # ...existing apps...
-    'octofit_tracker',  # Added to register the app containing management commands
-    'octofit_tracker_app',
+    'octofit_tracker',  # Consolidate into octofit_tracker
     'corsheaders',
 ]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
+        'ENGINE': 'djongo',  # Add djongo as the database engine
         'NAME': 'octofit_db',
-        'HOST': 'localhost',  # Ensure the host is explicitly set to localhost
+        'HOST': 'localhost',  # Explicitly set to localhost
         'PORT': 27017,
     }
 }

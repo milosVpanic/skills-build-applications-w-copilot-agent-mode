@@ -9,7 +9,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        'HOST': 'localhost',
+        'HOST': 'localhost',  # Ensure the host is explicitly set to localhost
         'PORT': 27017,
     }
 }

@@ -17,7 +17,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from octofit_tracker import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/", views.api_root, name="api_root"),
 ]

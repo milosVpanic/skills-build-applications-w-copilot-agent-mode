@@ -32,4 +32,4 @@ CORS_ALLOW_HEADERS = [
 ]
 
 # Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'congenial-funicular-g54596v9g663wvwx-8000.app.github.dev']

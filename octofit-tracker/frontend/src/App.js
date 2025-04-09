@@ -14,6 +14,10 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
+          <div className="logo">
+            <img src={logo} alt="Octofit Logo" />
+            <h1>Welcome to Octofit</h1>
+          </div>
           <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="/">Octofit</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

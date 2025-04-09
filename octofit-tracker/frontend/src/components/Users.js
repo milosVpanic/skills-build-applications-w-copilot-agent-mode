@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -11,12 +12,23 @@ function Users() {
 
   return (
     <div>
-      <h2>Users</h2>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
+      <h2 className="text-primary">Users</h2>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }

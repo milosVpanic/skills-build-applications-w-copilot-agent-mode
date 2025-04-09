@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 
 function Workouts() {
   const [workouts, setWorkouts] = useState([]);
@@ -11,12 +12,23 @@ function Workouts() {
 
   return (
     <div>
-      <h2>Workouts</h2>
-      <ul>
-        {workouts.map(workout => (
-          <li key={workout.id}>{workout.name}</li>
-        ))}
-      </ul>
+      <h2 className="text-primary">Workouts</h2>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {workouts.map(workout => (
+            <tr key={workout.id}>
+              <td>{workout.id}</td>
+              <td>{workout.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }

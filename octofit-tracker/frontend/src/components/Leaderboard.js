@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -11,12 +12,25 @@ function Leaderboard() {
 
   return (
     <div>
-      <h2>Leaderboard</h2>
-      <ul>
-        {leaderboard.map(entry => (
-          <li key={entry.id}>{entry.name}: {entry.score}</li>
-        ))}
-      </ul>
+      <h2 className="text-primary">Leaderboard</h2>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leaderboard.map(entry => (
+            <tr key={entry.id}>
+              <td>{entry.id}</td>
+              <td>{entry.name}</td>
+              <td>{entry.score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }

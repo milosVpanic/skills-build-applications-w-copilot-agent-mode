@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 import './App.css';
 import logo from '../docs/octofitapp-small.png';
 import Activities from './components/Activities';
@@ -13,18 +14,19 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <div className="logo">
-            <img src={logo} alt="Octofit Logo" />
-            <h1>Welcome to Octofit</h1>
-          </div>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/activities">Activities</Link>
-            <Link to="/leaderboard">Leaderboard</Link>
-            <Link to="/teams">Teams</Link>
-            <Link to="/users">Users</Link>
-            <Link to="/workouts">Workouts</Link>
-          </nav>
+          <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar.Brand href="/">Octofit</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="/activities">Activities</Nav.Link>
+                <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
+                <Nav.Link href="/teams">Teams</Nav.Link>
+                <Nav.Link href="/users">Users</Nav.Link>
+                <Nav.Link href="/workouts">Workouts</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
         </header>
         <main>
           <Routes>
